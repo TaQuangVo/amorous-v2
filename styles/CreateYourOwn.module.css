@@ -1,0 +1,39 @@
+.container {
+  height: var(--vh);
+  width: 100vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+.wraper {
+  margin: 0px 20px;
+  max-width: 1000px;
+}
+.wraper h1 {
+  color: rgba(255, 255, 255, 0.726);
+  font-family: var(--font-family-one);
+  font-weight: 300;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+.wraper p {
+  color: rgba(255, 255, 255, 0.726);
+  font-family: var(--font-family-two);
+  font-weight: 300;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.wraper button {
+  color: rgba(255, 255, 255, 0.726);
+  font-family: var(--font-family-two);
+  font-weight: 300;
+  font-size: 1.3rem;
+
+  background-color: transparent;
+  border-radius: 99px;
+  border: solid rgb(255, 255, 255) 1px;
+  outline: none;
+  padding: 0.5rem 2rem;
+}

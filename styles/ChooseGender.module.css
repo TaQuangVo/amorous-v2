@@ -1,0 +1,65 @@
+/*swiper*/
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+.header h1 {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.603);
+  font-family: var(--font-family-one);
+  font-weight: 300;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.header p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.603);
+  font-family: var(--font-family-two);
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+.slideShowContainer {
+  height: 34rem;
+  max-height: 60vh;
+  width: 1200px;
+  position: relative;
+  max-width: 100vw;
+  display: flex;
+}
+.slideItem {
+  width: 22rem;
+  background-color: rgb(155, 121, 165);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.sliderItem__image {
+  width: 100%;
+  height: 100%;
+}
+.sliderItem__overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.39);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*content*/
+.content {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+}
+
+/*media*/
+@media (max-width: 1200px) {
+}
+@media (max-width: 800px) {
+}
+@media (max-width: 550px) {
+}

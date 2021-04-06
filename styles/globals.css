@@ -5,6 +5,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+html {
+  font-size: 16px;
+}
 
 a {
   color: inherit;
@@ -13,4 +16,68 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --vh: 100vh;
+  --font-family-one: "Dancing Script", cursive;
+  --font-family-two: "Poppins", sans-serif;
+}
+
+/*bambuger icon nav */
+.hamburger--active div::after {
+  transform: rotate(45deg) !important;
+  transform-origin: right center !important;
+}
+.hamburger--active div::before {
+  transform: rotate(-45deg) !important;
+  transform-origin: right center !important;
+}
+.hamburger--active div {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+.linksMenu--active {
+  clip-path: circle(150% at 100% 0%) !important;
+  background-image: linear-gradient(
+    19deg,
+    #21d5fdb9 0%,
+    #b921ffb7 100%
+  ) !important;
+}
+
+/*swiper*/
+.swiper-slide-active .sliderItem__overlay {
+  background-color: rgba(0, 0, 0, 0.342) !important;
+}
+
+/*design your own swiper*/
+.sliderItemW--designYO {
+  width: 22rem !important;
+  border-radius: 30px !important;
+  overflow: hidden !important;
+}
+
+/*MEDIA QUERY*/
+@media (max-width: 1500px) {
+  html {
+    font-size: 13px;
+  }
+}
+@media (max-width: 1000px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media (max-width: 550px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media (max-width: 350px) {
 }

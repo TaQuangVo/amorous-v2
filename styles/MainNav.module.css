@@ -1,0 +1,136 @@
+.nav {
+  width: 100vw;
+  height: 7rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.navContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  justify-content: space-between;
+}
+.nav__logo {
+  width: 11rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 5rem;
+  transform: translateY(-5%);
+}
+.hamburger {
+  width: 2.3rem;
+  height: 1.8rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hamburger .icon {
+  width: 100%;
+  height: 10%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 99px;
+  transition: all 200ms ease;
+  pointer-events: none;
+}
+.hamburger .icon::before {
+  content: "";
+  width: 100%;
+  height: inherit;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  border-radius: 99px;
+  top: 0;
+  left: 0;
+  transition: all 200ms ease;
+}
+.hamburger .icon::after {
+  content: "";
+  width: 100%;
+  height: inherit;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  border-radius: 99px;
+  bottom: 0;
+  left: 0;
+  transition: all 200ms ease;
+}
+.hamburger:hover .icon::after {
+  transform: rotate(5deg);
+  transform-origin: right center;
+}
+.hamburger:hover .icon::before {
+  transform: rotate(-5deg);
+  transform-origin: right center;
+}
+.hamburger:hover .icon {
+  background-color: rgba(255, 255, 255, 0.534);
+}
+
+/*meny*/
+.linksMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--vh);
+  background-image: linear-gradient(19deg, #21d5fdb9 0%, #b921ffb7 100%);
+  backdrop-filter: blur(7px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  clip-path: circle(0% at 100% 0%);
+  transition: all 300ms ease-in-out;
+}
+.linksMenu a {
+  color: white;
+  font-family: var(--font-family-two);
+  font-size: 2rem;
+  margin-top: 2rem;
+  transition: all 300ms ease;
+}
+.linksMenu a:hover {
+  transform: scale(1.2);
+}
+
+.signInBtn {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  margin-top: 3rem;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+.signInBtn svg {
+  height: 100%;
+  fill: white;
+  margin-right: 0.6rem;
+}
+.signInBtn p {
+  color: rgb(255, 255, 255);
+  font-family: var(--font-family-two);
+  font-size: 1.5rem;
+}
+.signInBtn:hover {
+  transform: scale(1.2);
+}
+
+/*media query */
+@media (max-width: 600px) {
+  .navContainer {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 350px) {
+  .navContainer {
+    padding: 0 20px;
+  }
+  .nav {
+    height: 5rem;
+  }
+}
