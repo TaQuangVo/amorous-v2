@@ -4,7 +4,6 @@ import {useContext} from "react"
 
 //conponents 
 import HomeSlideShow from "../components/HomeSlideShow"
-import MainFooter from "../components/MainFooter"
 import HomepageContent  from "../components/HomepageContent"
 
 

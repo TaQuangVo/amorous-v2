@@ -1,6 +1,6 @@
 /*content*/
 .content {
-  position: absolute;
+  position: relative;
   max-width: 700px;
   z-index: 98;
   pointer-events: none;

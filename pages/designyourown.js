@@ -8,6 +8,8 @@ import ChooseGender from "../components/ChooseGender"
 
 export default function DesignYourOwn() {
 
+    const [step,setStep] = useState(0);
+
     const [content, setContent] = useState({
         header:"Create Your Own",
         discription:"Your will go throw a serie of steps to create your fragrance",
@@ -16,13 +18,26 @@ export default function DesignYourOwn() {
     })
 
     return (
-        <div className={styleCreateYO.container}>
-            <div className={styleCreateYO.wraper}>
-                <h1>{content.header}</h1>
-                <p>{content.discription}</p>
-                <p>{content.discription2}</p>
-                <button>{content.button}</button>
+            
+            <div className={styleCreateYO.container}>
+                {step === 0 && (
+                    <div className={styleCreateYO.wraper}>
+                        <h1>{content.header}</h1>
+                        <p>{content.discription}</p>
+                        <p>{content.discription2}</p>
+                        <button onClick={() => {setStep(1)}}>{content.button}</button>
+                    </div> )
+                }
+                {step === 1 && <ChooseGender />}
+                
+                
             </div>
-        </div>
+            
+
+            
+    
+    
+        
+        
     )
 }

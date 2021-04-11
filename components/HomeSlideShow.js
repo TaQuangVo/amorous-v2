@@ -34,7 +34,6 @@ export default function HomeSlideShow({setcurrentSlide}) {
             slidesPerView:"auto",
             loop:false,
             pagination:{clickable:true},
-            //scrollbar={{ draggable: true }}
             slideToClickedSlide:true,
             coverflowEffect: {
                 rotate:50,
@@ -85,39 +84,3 @@ export default function HomeSlideShow({setcurrentSlide}) {
         </div>
     )
 }
-
-{ /*<div className={styleHomeSlideShow.slideShowContainer}>
-<Swiper
-mousewheel={true}
-speed={600}
-effect="coverflow"
-coverflowEffect={{
-    rotate:50,
-    depth:700,
-    slideShadows:true,
-    stretch:0,
-    modifier:0.5,
-}}
-centeredSlides={true}
-spaceBetween={10}
-slidesPerView="auto"
-loop={false}
-navigation
-pagination={{ clickable: true }}
-//scrollbar={{ draggable: true }}
-onSwiper={(swiper) => console.log(swiper)}
-onSlideChange={(e) => setcurrentSlide(e.activeIndex)}
-slideToClickedSlide={true}
-
->
-    <SwiperSlide className="sliderItemW">
-        
-    </SwiperSlide>
-    <SwiperSlide className="sliderItemW">
-        
-    </SwiperSlide>
-    <SwiperSlide className="sliderItemW">
-        
-    </SwiperSlide>
-</Swiper> 
-</div>*/}

@@ -20,6 +20,7 @@ export default function HomeBackgound({img}) {
             const mouseX = e.clientX;
             const mouseY = e.clientY;
 
+
             const offsetX = mouseX / midleX-1;
             const offsetY = mouseY / midleY-1;
 

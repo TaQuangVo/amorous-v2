@@ -58,8 +58,8 @@ a {
   overflow: hidden !important;
 }
 
-/*MEDIA QUERY*/
-@media (max-width: 1500px) {
+/*MEDIA QUERYy*/
+@media (max-width: 1700px) {
   html {
     font-size: 13px;
   }
