@@ -42,7 +42,7 @@ export default function MainNav() {
                 </div>
                 <div className={styleMainNav.nav__logo}>
                     <Link href="/">
-                    <a><Image src="/mainLogo.png" alt="Main Logo" width={364} height={120} ></Image></a>              
+                    <a><Image src="/icons/mainLogo.png" alt="Main Logo" width={364} height={120} ></Image></a>              
                     </Link>           
                 </div>
                 <div ref={el => hambuger = el} className={styleMainNav.hamburger} onClick={handleOnBurgerClick}>

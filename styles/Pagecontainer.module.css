@@ -1,14 +1,9 @@
 .container {
   height: var(--vh);
   width: 100vw;
-}
-.main {
-  width: 100%;
-  height: var(--vh);
+  position: relative;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
-  overflow: hidden;
+  z-index: 3;
 }
