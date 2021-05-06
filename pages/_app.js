@@ -1,4 +1,6 @@
 import '../styles/globals.css'
+import {useEffect} from "react"
+import {AnimatePresence} from "framer-motion"
 
 //components
 import Layout from "../components/Layout"
@@ -10,13 +12,26 @@ import OderContextProvider from "../context/OderContext";
 
 
 function MyApp({ Component, pageProps }) {
+
+  useEffect(() => {
+    const handleResize = (e) => {
+      document.documentElement.style.setProperty('--vh', window.innerHeight + "px");
+    }
+    window.addEventListener("resize", handleResize)
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  }, []);
+
   return (
     <OderContextProvider>
     <LanguageContextProvider>
     <HomepageContextProvider>
+    <AnimatePresence exitBeforeEnter>
       <Layout>
         <Component {...pageProps} />
       </Layout>
+    </AnimatePresence>
     </HomepageContextProvider>
     </LanguageContextProvider>
     </OderContextProvider>

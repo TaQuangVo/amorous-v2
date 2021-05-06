@@ -1,7 +1,7 @@
 /*footer*/
 .footer {
   width: 100vw;
-  height: 100px;
+  height: 6rem;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -33,16 +33,5 @@
 @media (max-width: 750px) {
   .footer .footerContainer {
     padding: 0 20px;
-  }
-  .footer {
-    height: 60px;
-  }
-}
-@media (max-width: 350px) {
-  .footer .footerContainer {
-    padding: 0 20px;
-  }
-  .footer {
-    height: 40px;
   }
 }

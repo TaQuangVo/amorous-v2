@@ -1,0 +1,118 @@
+.chooseIngredientsWraper {
+  height: 100%;
+  padding: 2vh 10px;
+}
+/*header*/
+.header h2 {
+  text-align: center;
+  font-family: var(--font-family-one);
+  font-weight: 300;
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+.header p {
+  text-align: center;
+  font-family: var(--font-family-two);
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/*search and button*/
+.searchNBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2.5rem;
+  margin: 2rem 0 2rem 0;
+}
+.search {
+  display: flex;
+  height: 100%;
+  border-radius: 99px;
+  border: solid 1px rgb(255, 255, 255);
+  padding: 2px 0.7rem 2px 1rem;
+  align-items: center;
+}
+.search input {
+  width: 13rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  color: white;
+}
+.searchIcon {
+  height: 50%;
+}
+.searchIcon svg {
+  height: 100%;
+  fill: rgb(172, 172, 172);
+}
+
+.continue {
+  height: 100%;
+}
+.continue button {
+  height: 100%;
+  padding: 0 2.5rem;
+  background-color: var(--color-main);
+  border-radius: 99px;
+  border: solid 1px rgb(255, 255, 255);
+  outline: none;
+  color: white;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+.continue button:hover {
+  background-color: white;
+  color: black;
+}
+
+/*ingredients*/
+.chooseIngredientsWraper {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+}
+.ingredientsWraper {
+  overflow-y: scroll;
+  /* this will hide the scrollbar in mozilla based browsers */
+  overflow: -moz-scrollbars-none;
+  /* this will hide the scrollbar in internet explorers */
+  -ms-overflow-style: none;
+}
+/* this will hide the scrollbar in webkit based browsers - safari, chrome, etc */
+.ingredientsWraper::-webkit-scrollbar {
+  width: 0 !important;
+  display: none;
+}
+
+.body {
+  position: relative;
+  padding-bottom: 200px;
+  min-height: 100%;
+}
+.ingrediens {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 50px;
+}
+.noFound {
+  margin: auto;
+  grid-column-start: 1;
+  grid-column-end: span 4;
+  font-family: var(--font-family-two);
+  font-weight: 200;
+  font-size: 1rem;
+  margin-top: 50px;
+  color: white;
+}

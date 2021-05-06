@@ -11,16 +11,15 @@ import HomepageContent  from "../components/HomepageContent"
 //context
 import {homeContext} from "../context/HomepageContext";
 import {languageContext} from "../context/LanguageContext";
-import {oderContext} from "../context/OderContext";
+
 
 export default function Home() {
 
   const {content,currentSlide,setcurrentSlide} = useContext(homeContext)
   const {language,setLanguage} =useContext(languageContext);
-  const {gender,setGender} =useContext(oderContext);
 
   useEffect(() => {
-    console.log(gender);
+    language
   }, [])
 
   return (

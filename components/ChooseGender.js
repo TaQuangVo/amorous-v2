@@ -1,21 +1,30 @@
 import styleChoseGender from "../styles/ChooseGender.module.css"
-import {useEffect}  from "react";
+import {useEffect, useState, useContext}  from "react";
 import Image from "next/image"
+import { useRouter } from 'next/router'
 
 //components
+import ChooseGenderContent from "./ChooseGenderContent";
 
+//context
+import {oderContext} from "../context/OderContext";
 
-
+//
+//swiper
 import "swiper/swiper-bundle.css"
 // import Swiper core and required modules
-import SwiperCore, { Swiper, Navigation, Pagination, Scrollbar, A11y,EffectCoverflow, Controller,Mousewheel } from 'swiper';
-import ChooseGenderContent from "./ChooseGenderContent";
+import SwiperCore, { Swiper, Navigation, Pagination,EffectCoverflow } from 'swiper';
 // install Swiper modules
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y,EffectCoverflow,Controller,Mousewheel ]);
+SwiperCore.use([Navigation, Pagination,EffectCoverflow ]);
 
-export default function ChooseGender() {
 
+export default function ChooseGender({redirectLink}) {
+
+
+    const {setOder, Male, Female} = useContext(oderContext);
     let swiper;
+    const [currentSlide, setCurrentSlide] = useState(0)
+    const router = useRouter();
 
     useEffect(() => {
         swiper = new Swiper('.swiper-container', {
@@ -44,12 +53,31 @@ export default function ChooseGender() {
             },
           });
         swiper.slideTo(1);
-        swiper.slideTo(0);
+        swiper.slideTo(currentSlide);
+        swiper.on('slideChange', (e) => {
+            setCurrentSlide(e.activeIndex)
+          });
     }, [])
 
-    let content = {
-        
+    const handleOnClick = () => {
+        setOder(prev => {
+            return {
+                ...prev,
+                gender: currentSlide === 0 ? Male : Female,
+            }
+        })
+        router.push(redirectLink);
     }
+
+    let content = [{
+        header:"Male",
+        discription:"Create the perfect male fragrance",
+        btn:"Let create"
+    },{
+        header:"Female",
+        discription:"Create the perfect female fragrance",
+        btn:"Let create"
+    }];
 
     return (
         <div className={styleChoseGender.container}>
@@ -66,7 +94,12 @@ export default function ChooseGender() {
                                 <div className={[styleChoseGender.sliderItem__overlay, "sliderItem__overlay"].join(" ")}></div>
                             </div>
                         </div>
-                        <ChooseGenderContent content={"ok"} onClick= {() =>{console.log("clicked")}} />
+                        {
+                            currentSlide === 0 && 
+                            <ChooseGenderContent 
+                            content={content[currentSlide]} 
+                            onClick= {handleOnClick} />
+                        }
                     </div>
                     <div className={[styleChoseGender.swiperSlide, "swiper-slide"].join(" ")}>
                         <div className={styleChoseGender.slideItem}>
@@ -75,7 +108,12 @@ export default function ChooseGender() {
                                 <div className={[styleChoseGender.sliderItem__overlay, "sliderItem__overlay"].join(" ")}></div>
                             </div>
                         </div>
-                        <ChooseGenderContent content={"ok"} onClick= {() =>{console.log("clicked")}} />
+                        {
+                            currentSlide === 1 && 
+                            <ChooseGenderContent 
+                            content={content[currentSlide]} 
+                            onClick= {handleOnClick} />
+                        }
                     </div>
                 </div>
                 <div className={[styleChoseGender.SwiperBtnPrev, "swiper-button-prev"].join(" ")}></div>

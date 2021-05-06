@@ -1,0 +1,71 @@
+.container {
+  height: 30px;
+  min-width: 140px;
+  background-color: rgb(180, 180, 180);
+  border-radius: 99px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  margin-right: 20px;
+}
+.avata {
+  position: relative;
+  height: 22px;
+  width: 22px;
+  min-width: 22px;
+  min-height: 22px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 7px;
+}
+.tagName {
+  font-family: var(--font-family);
+  white-space: nowrap;
+  width: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: white;
+  margin-right: 10px;
+}
+.close {
+  height: 20px;
+  width: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 3px;
+  border-radius: 99px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.151);
+  cursor: pointer;
+}
+.close svg {
+  height: 40%;
+  fill: white;
+}
+
+@media (max-width: 500px) {
+  .container {
+    height: 25px;
+    margin-right: 10px;
+    min-width: 100px;
+  }
+  .avata {
+    height: 20px;
+    width: 20px;
+    min-width: 20px;
+    min-height: 20px;
+  }
+  .close {
+    height: 17px;
+    width: 17px;
+    min-width: 17px;
+    min-height: 17px;
+    margin-right: 1px;
+  }
+}

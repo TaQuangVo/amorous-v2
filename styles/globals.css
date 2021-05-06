@@ -23,6 +23,16 @@ a {
   --vh: 100vh;
   --font-family-one: "Dancing Script", cursive;
   --font-family-two: "Poppins", sans-serif;
+
+  /*preview var*/
+  --width: 500px;
+  --scale: 1;
+  --font-size-one: 19px;
+  --font-size-two: 19px;
+  --font-size-three: 19px;
+  --font-fam-one: var(--font-family-one);
+  --font-fam-two: var(--font-family-one);
+  --font-fam-three: var(--font-family-one);
 }
 
 /*bambuger icon nav */
@@ -51,13 +61,6 @@ a {
   background-color: rgba(0, 0, 0, 0.342) !important;
 }
 
-/*design your own swiper*/
-.sliderItemW--designYO {
-  width: 22rem !important;
-  border-radius: 30px !important;
-  overflow: hidden !important;
-}
-
 /*MEDIA QUERYy*/
 @media (max-width: 1700px) {
   html {
@@ -67,6 +70,25 @@ a {
 @media (max-width: 1000px) {
   html {
     font-size: 12px;
+  }
+  :root {
+    --scale: 0.8;
+  }
+}
+@media (max-width: 750px) {
+  :root {
+    --scale: 0.6;
+  }
+}
+#secondBtn {
+  display: none;
+}
+@media (max-width: 650px) {
+  #firstBtn {
+    display: none !important;
+  }
+  #secondBtn {
+    display: block !important;
   }
 }
 @media (max-width: 550px) {
@@ -80,4 +102,10 @@ a {
   }
 }
 @media (max-width: 350px) {
+}
+
+.showPopUp {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }

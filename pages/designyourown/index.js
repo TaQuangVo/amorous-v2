@@ -1,16 +1,27 @@
 import styleCreateYO from "../../styles/CreateYourOwn.module.css"
-import {useState} from "react"
+import {useState, useContext} from "react"
 import { useRouter } from 'next/router'
 
 //components
 import PageContainer from "../../components/PageContainer"
 
+//context
+import {oderContext} from "../../context/OderContext";
+
 
 export default function DesignYourOwn() {
+
+    const {setOder,CreateYO}  = useContext(oderContext);
 
     const router = useRouter()
 
     const nextSteps = () => {
+        setOder(prev => {
+           return {
+               ...prev,
+               type:CreateYO,
+           }
+        });
         router.push("/designyourown/choosegender");
     }
 

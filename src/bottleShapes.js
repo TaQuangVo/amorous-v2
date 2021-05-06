@@ -1,0 +1,29 @@
+export const bottleShapes = [{
+    id:1,
+    url:"/bottles/signac_1.png",
+    name:"BottleOne"
+},{
+    id:2,
+    url:"/bottles/signac_1new.png",
+    name:"BottleTwo"
+},{
+    id:3,
+    url:"/bottles/signac_1.png",
+    name:"BottleThree"
+},{
+    id:4,
+    url:"/bottles/signac_1.png",
+    name:"BottleFour"
+},{
+    id:5,
+    url:"/bottles/signac_1.png",
+    name:"BottleFive"
+},{
+    id:6,
+    url:"/bottles/signac_1.png",
+    name:"BottleSix"
+},{
+    id:7,
+    url:"/bottles/signac_1.png",
+    name:"BottleSeven"
+}]
