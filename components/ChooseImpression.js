@@ -23,7 +23,7 @@ export default function ChoseImpression({redirectLink}) {
 
     const {oder, setOder, Male, Female} = useContext(oderContext);
     let swiper;
-    const [currentSlide, setCurrentSlide] = useState(0)
+    const [currentSlide, setCurrentSlide] = useState(0);
     const router = useRouter();
     let impressions
 
@@ -31,6 +31,8 @@ export default function ChoseImpression({redirectLink}) {
         impressions = impressionMale
     }else if(oder.gender === Female){
         impressions = impressionFemale
+    }else{
+        impressions = impressionMale
     }
 
     useEffect(() => {
