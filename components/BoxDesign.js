@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import styles from '../styles/BoxDesign.module.css'
+import styles from '../styles/Boxdesign.module.css'
 import Image from "next/image"
 import {useState, useContext,useEffect,useRef} from "react"
 
-//components
+//components 
 import Dropdown from "./Dropdown";
 
 //data
