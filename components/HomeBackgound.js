@@ -1,9 +1,9 @@
 import styleHomeBackground from "../styles/HomeBackgound.module.css";
 import Image from "next/image"
 import {useEffect, useRef} from "react"
+import {motion} from "framer-motion";
 
-import dynamic from 'next/dynamic'
-const Bubble  = dynamic(() => import("../library/Bubbles-master"),{ ssr: false })
+
 
 
 export default function HomeBackgound({img}) {
@@ -42,12 +42,15 @@ export default function HomeBackgound({img}) {
     }, [])
 
     return (
-        <div className={styleHomeBackground.backgroundImage}>
+        <motion.div
+        initial={{opacity:0.9}}
+        animate={{opacity:1}}
+        exit={{opacity:0.9}}
+        className={styleHomeBackground.backgroundImage}>
             <div id="imgWrapBackground" className={styleHomeBackground.backgroundImage__wraper}>
                 <Image src={img} layout="fill" objectFit="cover" quality={20} ></Image>
                 <div className={styleHomeBackground.backgroundImage__overlay}></div>
             </div>
-            <Bubble color="255, 255, 255"/>
-        </div>
+        </motion.div>
     )
 }

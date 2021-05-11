@@ -20,7 +20,7 @@ export default function bottleDesign() {
 
     return (          
            <PageContainer>
-               <BottleDesign />
+               <BottleDesign redirectLink="/designyourown/boxDesign"/>
            </PageContainer>
     )
 }

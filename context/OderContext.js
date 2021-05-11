@@ -17,27 +17,19 @@ export default function OderContextProvider({children}) {
         charactor:null,
         impression:null,
         ingredients:null,
-        bottleId:null,
-        boxId:null,
     });
     const [bottleDesign, setBottleDesign] = useState({
-        fontFamilyOne: null,
-        fontFamilyTwo: null,
-        fontSize:null,
-        textOne:null,
-        textTwo:null,
-        textThree:null,
-        imageBlob:null,
+        bottle:null,
+        firstText:null,
+        secondText:null,
     });
     const [boxDesign, setBoxDesign] = useState({
-        fontFamily: null,
-        fontSize:null,
-        textOne:null,
-        imageBlob:null,
+        box:null,
+        text:null,
     });
 
     return (
-        <oderContext.Provider value={{oder,setOder,CreateYO,Female,Male,LetUsChoose}}>
+        <oderContext.Provider value={{oder,setOder,CreateYO,Female,Male,LetUsChoose,setBottleDesign,bottleDesign,boxDesign,setBoxDesign}}>
             {children}
         </oderContext.Provider>
     )

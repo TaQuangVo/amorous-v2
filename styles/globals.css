@@ -33,6 +33,15 @@ a {
   --font-fam-one: var(--font-family-one);
   --font-fam-two: var(--font-family-one);
   --font-fam-three: var(--font-family-one);
+
+  /*box design*/
+  --boxDim-x: 300px;
+  --boxDim-y: 540px;
+  --boxDim-z: 150px;
+
+  --boxPreview-scale: 1;
+  --boxPreview-font: "Dancing Script", cursive;
+  --boxPreview-fontSize: 13px;
 }
 
 /*bambuger icon nav */
@@ -66,6 +75,9 @@ a {
   html {
     font-size: 13px;
   }
+  :root {
+    --boxPreview-scale: 0.9;
+  }
 }
 @media (max-width: 1000px) {
   html {
@@ -73,6 +85,7 @@ a {
   }
   :root {
     --scale: 0.8;
+    --boxPreview-scale: 0.8;
   }
 }
 @media (max-width: 750px) {
@@ -90,15 +103,24 @@ a {
   #secondBtn {
     display: block !important;
   }
+  :root {
+    --boxPreview-scale: 0.7;
+  }
 }
 @media (max-width: 550px) {
   html {
     font-size: 11px;
   }
+  :root {
+    --boxPreview-scale: 0.6;
+  }
 }
 @media (max-width: 450px) {
   html {
     font-size: 10px;
+  }
+  :root {
+    --boxPreview-scale: 0.5;
   }
 }
 @media (max-width: 350px) {

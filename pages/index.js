@@ -1,11 +1,12 @@
 
 import stylesHome from '../styles/Home.module.css'
 import {useContext, useEffect} from "react"
-import {motion} from "framer-motion";
+import {motion, AnimatePresence} from "framer-motion";
 
 //conponents 
 import HomeSlideShow from "../components/HomeSlideShow"
 import HomepageContent  from "../components/HomepageContent"
+import PageContainer from "../components/PageContainer";
 
 
 //context
@@ -19,23 +20,20 @@ export default function Home() {
   const {language,setLanguage} =useContext(languageContext);
 
   useEffect(() => {
-    language
+    
   }, [])
 
   return (
-    <motion.div 
-    initial={{opacity:0}}
-    animate={{opacity:1}}
-    exit={{y:100}}
-    className={stylesHome.container}>
-
-
+   
+      <PageContainer>
         <main className={stylesHome.main}>
           <HomeSlideShow setcurrentSlide = {setcurrentSlide} />
-          {currentSlide === 0 && <HomepageContent content={content[0]}/>}
-          {currentSlide === 1 && <HomepageContent content={content[1]}/>}
-          {currentSlide === 2 && <HomepageContent content={content[2]}/>}
+          <AnimatePresence exitBeforeEnter>
+            {currentSlide === 0 && <HomepageContent content={content[0]} key={currentSlide}/>}
+            {currentSlide === 1 && <HomepageContent content={content[1]} key={currentSlide}/>}
+            {currentSlide === 2 && <HomepageContent content={content[2]} key={currentSlide}/>}
+          </AnimatePresence>
         </main>
-    </motion.div>
+      </PageContainer>
   )
 } 

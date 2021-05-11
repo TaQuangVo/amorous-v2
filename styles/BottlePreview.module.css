@@ -32,10 +32,6 @@
 }
 .topText {
   position: absolute;
-  left: 50%;
-  top: 35%;
-  transform: translate(-50%, 0px);
-  max-width: 35%;
 }
 .textOne {
   text-align: center;
@@ -60,12 +56,8 @@
   text-align: center;
   position: absolute;
   font-family: var(--preview-font-family);
-  left: 50%;
-  top: 83%;
-  transform: translate(-50%, 0px);
   font-size: calc(var(--font-size-three) * var(--scale));
   font-family: var(--font-fam-three);
-  max-width: 35%;
   overflow: hidden;
   text-overflow: ellipsis;
 }

@@ -29,6 +29,10 @@
 .sliderItem__image {
   width: 100%;
   height: 100%;
+  transition: all 1000ms ease-in-out;
+}
+.sliderItem__image:hover {
+  transform: scale(1.05);
 }
 .slideShowContainer {
   height: 750px;

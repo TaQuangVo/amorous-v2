@@ -14,17 +14,18 @@
   position: relative;
   z-index: 99;
   cursor: pointer;
-  pointer-events: none;
 }
 .inputs {
+  z-index: 98;
   background-color: rgb(255, 255, 255);
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   width: 100%;
   border-radius: calc(2.3rem / 2);
   overflow: hidden;
   transition: all 200ms ease-in-out;
+  box-shadow: -2px 2px 5px rgba(37, 37, 37, 0.329);
 }
 .inputs div {
   height: 2.3rem;
@@ -37,7 +38,18 @@
   align-items: center;
   padding: 0 1rem;
   cursor: pointer;
+  transition: all 100ms ease-in-out;
 }
 .inputs li:hover {
   background-color: rgb(218, 218, 218);
+}
+
+.dropdownOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: var(--vh);
+  background-color: rgba(128, 128, 128, 0);
+  z-index: 97;
 }

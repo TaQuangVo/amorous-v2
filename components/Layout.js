@@ -1,5 +1,8 @@
 import Head from 'next/head'
 import {useContext} from "react"
+import dynamic from 'next/dynamic'
+
+const Bubble  = dynamic(() => import("../library/Bubbles-master"),{ ssr: false })
 
 //context
 import {homeContext} from "../context/HomepageContext";
@@ -23,7 +26,9 @@ export default function Layout({children}) {
 
             <MainNav />
             <MainFooter />
+            
             <HomeBackgound img={content[currentSlide].img}/>
+            <Bubble color="255, 255, 255"/>
             {children}
         </div>
     )

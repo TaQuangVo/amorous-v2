@@ -11,7 +11,7 @@ import LanguageContextProvider from "../context/LanguageContext";
 import OderContextProvider from "../context/OderContext";
 
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps ,router }) {
 
   useEffect(() => {
     const handleResize = (e) => {
@@ -27,11 +27,11 @@ function MyApp({ Component, pageProps }) {
     <OderContextProvider>
     <LanguageContextProvider>
     <HomepageContextProvider>
-    <AnimatePresence exitBeforeEnter>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </AnimatePresence>
+    <Layout>
+      <AnimatePresence exitBeforeEnter initial={false}>
+      <Component {...pageProps } key={router.route}/> 
+      </AnimatePresence>
+    </Layout>
     </HomepageContextProvider>
     </LanguageContextProvider>
     </OderContextProvider>

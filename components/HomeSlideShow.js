@@ -47,7 +47,8 @@ export default function HomeSlideShow({setcurrentSlide}) {
             },
           });
           swiper.slideTo(1);
-          setcurrentSlide(1);
+          swiper.slideTo(0);
+          setcurrentSlide(0);
           swiper.on('slideChange', (e) => {
             setcurrentSlide(e.activeIndex)
           });

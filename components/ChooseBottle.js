@@ -21,7 +21,7 @@ SwiperCore.use([Navigation, Pagination,EffectCoverflow,Mousewheel ]);
 export default function ChooseBottle({redirectLink}) {
 
 
-    const {oder, setOder} = useContext(oderContext);
+    const {oder, setBottleDesign} = useContext(oderContext);
     let swiper;
     const [currentSlide, setCurrentSlide] = useState(0)
     const router = useRouter();
@@ -64,10 +64,10 @@ export default function ChooseBottle({redirectLink}) {
     }, [])
 
     const handleOnClick = () => {
-        setOder(prev => {
+        setBottleDesign(prev => {
             return {
                 ...prev,
-                bottleId: bottles[currentSlide].id,
+                bottle: bottles[currentSlide],
             }
         })
         router.push(redirectLink);

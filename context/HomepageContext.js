@@ -12,14 +12,14 @@ export default function HomepageContextProvider({children}) {
         header2:"fragrance",
         discription:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type",
         button:"Lorem ipsum",
-        img:"/img/design-your-own.jpg",
+        img:"/img/make-the-good-better-img.jpg",
         url:"/designyourown"
     },{
         header:"Make the good ",
         header2:"better",
         discription:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type",
         button:"Lorem ipsum",
-        img:"/img/make-the-good-better-img.jpg",
+        img:"/img/design-your-own.jpg",
         url:"/makethegoodbetter"
     },{
         header:"Let us chose ",
