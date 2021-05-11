@@ -28,9 +28,7 @@ function MyApp({ Component, pageProps ,router }) {
     <LanguageContextProvider>
     <HomepageContextProvider>
     <Layout>
-      <AnimatePresence exitBeforeEnter initial={false}>
       <Component {...pageProps } key={router.route}/> 
-      </AnimatePresence>
     </Layout>
     </HomepageContextProvider>
     </LanguageContextProvider>
