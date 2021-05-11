@@ -14,9 +14,10 @@ import OderContextProvider from "../context/OderContext";
 function MyApp({ Component, pageProps ,router }) {
 
   useEffect(() => {
-    const handleResize = (e) => {
+    const handleResize = () => {
       document.documentElement.style.setProperty('--vh', window.innerHeight + "px");
     }
+    handleResize();
     window.addEventListener("resize", handleResize)
     return () => {
       window.removeEventListener("resize", handleResize)
@@ -28,7 +29,9 @@ function MyApp({ Component, pageProps ,router }) {
     <LanguageContextProvider>
     <HomepageContextProvider>
     <Layout>
+      {/*<AnimatePresence exitBeforeEnter initial={false}>*/}
       <Component {...pageProps } key={router.route}/> 
+      {/*</AnimatePresence>*/}
     </Layout>
     </HomepageContextProvider>
     </LanguageContextProvider>
