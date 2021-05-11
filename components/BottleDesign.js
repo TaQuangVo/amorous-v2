@@ -155,7 +155,23 @@ export default function BottleDesign({redirectLink}) {
                     <div className={styleBottleDesign.prevewSide}>
                         <div className={styleBottleDesign.previewWraper}>
                             <BottlePreview 
-                            bottle={bottleDesign.bottle}
+                            bottle={bottleDesign.bottle === null ? {
+                                id:1,
+                                url:"/bottles/signac_1new.png",
+                                name:"BottleOne",
+                                topText:{
+                                    y:35,
+                                    xOffset:0,
+                                    rotate:0,
+                                    maxWidth: 30,
+                                },
+                                bottomText:{
+                                    y:83,
+                                    xOffset:0,
+                                    rotate:0,
+                                    maxWidth: 30,
+                                }
+                            } : bottleDesign.bottle}
                             firstText={firstText.text}
                             secondText={secondText.text}
                             thirdText={thirdText.text}
