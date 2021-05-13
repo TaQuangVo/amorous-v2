@@ -1,3 +1,15 @@
+.container {
+  overflow-x: hidden;
+  position: relative;
+}
+.homeslider {
+  z-index: 1;
+  position: relative;
+}
+.contentContainer {
+  z-index: 2;
+  position: relative;
+}
 .main {
   width: 100%;
   height: 100%;
@@ -7,4 +19,103 @@
   align-items: center;
   position: relative;
   overflow: hidden;
+}
+
+/*content*/
+.content {
+  height: var(--vh);
+  width: 100vw;
+  background-color: rgb(255, 255, 255);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  overflow: hidden;
+}
+.content__imgContainer {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.content__img {
+  width: 100vw;
+  min-width: 900px;
+}
+.content__header {
+  position: relative;
+}
+.content__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(188, 65, 151);
+  background: linear-gradient(
+    55deg,
+    rgb(188, 65, 151) 0%,
+    rgb(148, 36, 204) 100%
+  );
+  opacity: 0.8;
+}
+.content__header svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.content__texts {
+  width: 90%;
+  color: white;
+  text-align: center;
+  font-family: var(--font-family-two);
+  font-weight: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+.content__texts h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.content__texts p {
+  font-weight: 100;
+  font-size: 0.9rem;
+}
+
+.content__showCase {
+  width: 45rem;
+  height: 10rem;
+  max-width: 90%;
+  border-radius: 0.5rem;
+  align-items: center;
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgba(255, 255, 255, 0.534);
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0%);
+  box-shadow: 2px 2px 20px 4px #33333331;
+  backdrop-filter: blur(7px);
+}
+.content__showCase div {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  height: 5rem;
+  text-align: center;
+}
+.content__showCase div h2 {
+  font-family: var(--font-family-two);
+  color: rgb(188, 65, 151);
+  font-size: 2rem;
+}
+.content__showCase div p {
+  font-family: var(--font-family-two);
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  font-size: 1rem;
+  max-width: 10rem;
 }

@@ -1,7 +1,7 @@
 .nav {
   width: 100vw;
   height: 7rem;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 99;
@@ -12,6 +12,7 @@
   align-items: center;
   padding: 0 50px;
   justify-content: space-between;
+  transition: all 300ms ease-in-out;
 }
 .nav__logo {
   width: 11rem;
@@ -41,7 +42,7 @@
   content: "";
   width: 100%;
   height: inherit;
-  background-color: rgb(255, 255, 255);
+  background-color: inherit;
   position: absolute;
   border-radius: 99px;
   top: 0;
@@ -53,7 +54,7 @@
   content: "";
   width: 100%;
   height: inherit;
-  background-color: rgb(255, 255, 255);
+  background-color: inherit;
   position: absolute;
   border-radius: 99px;
   bottom: 0;
@@ -78,7 +79,13 @@
   left: 0;
   width: 100%;
   height: var(--vh);
-  background-image: linear-gradient(19deg, #21d5fdb9 0%, #b921ffb7 100%);
+  /*background-image: linear-gradient(19deg, #21d5fdb9 0%, #b921ffb7 100%);*/
+  background: rgb(188, 65, 151);
+  background: linear-gradient(
+    55deg,
+    rgba(188, 65, 151, 0.705) 0%,
+    rgba(148, 36, 204, 0.644) 100%
+  );
   backdrop-filter: blur(7px);
   display: flex;
   justify-content: center;

@@ -1,11 +1,12 @@
 import styleMainNav from "../styles/MainNav.module.css"
 import Link from "next/link"
 import Image from "next/image"
-import {useRef, useState} from "react"
+import {useRef, useState,useEffect} from "react"
 import {AnimatePresence, motion} from "framer-motion";
 
 export default function MainNav() {
 
+    const [navWhite, setNavWhite] = useState(false)
     const [content, setContent] = useState({
         start:"Start",
         about:"About",
@@ -13,6 +14,7 @@ export default function MainNav() {
         policy:"Policy",
         signIn:"Signin"
     })
+
 
     const [navActive, setNavActive] = useState(false);
 
@@ -28,11 +30,35 @@ export default function MainNav() {
             setNavActive(false);
         }
     }
+
+    useEffect(() => {
+
+        const handleScroll = () => {
+            const nav = document.getElementById("navBar");
+      
+      
+            const Yoffset = window.pageYOffset;
+
+            if(Yoffset > 50){
+              nav.style.backgroundColor="white";
+              setNavWhite(true);
+            }
+            if(Yoffset < 50){
+              nav.style.backgroundColor="transparent";
+              setNavWhite(false);
+            }
+          }
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+             window.removeEventListener("scroll", handleScroll);
+        }
+    }, [])
     
     return (
         <nav className={styleMainNav.nav}>
-            <div className={styleMainNav.navContainer}>
-                <div ref={el => menuLinks = el} className={styleMainNav.linksMenu}>
+            <div ref={el => menuLinks = el} className={styleMainNav.linksMenu}>
                     <AnimatePresence>
                         {navActive && <div key={navActive}> <motion.div 
                         initial={{opacity:0 , y:100}} 
@@ -71,15 +97,18 @@ export default function MainNav() {
                         </motion.div> </div>}
                     </AnimatePresence>
                 </div>
+            <div className={styleMainNav.navContainer} id="navBar">
                 <div className={styleMainNav.nav__logo}>
                     <Link href="/">
-                    <a><Image src="/icons/mainLogo.png" alt="Main Logo" width={364} height={120} ></Image></a>              
+                    <a>{ navWhite ? <Image src="/icons/mainLogoColor.png" alt="Main Logo" width={611} height={250} ></Image> : <Image src="/icons/mainLogo.png" alt="Main Logo" width={364} height={120} ></Image>}
+                        </a>              
                     </Link>           
                 </div>
                 <div ref={el => hambuger = el} className={styleMainNav.hamburger} onClick={handleOnBurgerClick}>
-                    <div className={styleMainNav.icon}></div>
+                    <div className={styleMainNav.icon} style={navWhite ? {backgroundColor:"rgb(188, 65, 151)"} : {backgroundColor:"white"}}></div>
                 </div>
             </div>
+            
         </nav>
     )
 }

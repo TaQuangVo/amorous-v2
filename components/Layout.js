@@ -26,7 +26,6 @@ export default function Layout({children}) {
 
             <MainNav />
             <MainFooter />
-            
             <HomeBackgound img={content[currentSlide].img}/>
             <Bubble color="255, 255, 255"/>
             {children}
