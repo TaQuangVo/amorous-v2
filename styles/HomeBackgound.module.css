@@ -15,7 +15,7 @@
   --offsetX: 0;
   --offsetY: 0;
   width: 100%;
-  height: 100%;
+  height: var(--vh);
   transform: scale(1.2);
   position: relative;
   transform: scale(1.2) translate(var(--offsetX), var(--offsetY));
@@ -23,7 +23,7 @@
 }
 .backgroundImage__overlay {
   width: 100%;
-  height: 100% !important;
+  height: var(--vh) !important;
   background-color: rgba(0, 0, 0, 0.589);
   position: absolute;
   top: 0;
