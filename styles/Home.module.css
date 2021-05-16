@@ -20,14 +20,42 @@
   position: relative;
   overflow: hidden;
 }
+.overlay{
+  position:absolute;
+  width:100vw;
+  height:var(--vh);
+  top:0;
+  left:0;
+  background-color:black;
+  z-index:3;
+  pointer-events:none;
+  opacity:0;
+}
+.scrollDown{
+  position:absolute;
+  z-index:4;
+  bottom:1rem;
+  left:50%;
+  transfrom:translateX(-50%);
+  font-size:1rem;
+  font-family:var( --font-family-two);
+  display:flex;
+  color:white;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  opacity:0.7;
+}
+.scrollDown svg{
+  width:0.8rem;
+  fill:white;
+  transform:rotate(90deg);
+}
 
 /*content*/
 .content {
   height: var(--vh);
   width: 100vw;
-  background-color: rgb(255, 255, 255);
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
   overflow: hidden;
 }
 .content__imgContainer {

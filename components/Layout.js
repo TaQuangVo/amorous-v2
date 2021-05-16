@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import {useContext} from "react"
+import {useContext,useState, useEffect} from "react"
 import dynamic from 'next/dynamic'
+import { useRouter } from 'next/router'
 
 const Bubble  = dynamic(() => import("../library/Bubbles-master"),{ ssr: false })
 
@@ -16,6 +17,17 @@ import MainFooter from "../components/MainFooter"
 export default function Layout({children}) {
 
     const {content,currentSlide} = useContext(homeContext)
+    const [showFooter, setShowFooter] = useState(true);
+    const router = useRouter();
+
+    useEffect(()=>{
+        const route = router.route
+        if(route === "/"){
+            setShowFooter(false);
+        }else{
+            setShowFooter(true);
+        }
+    },[router]);
 
     return (
         <div>
@@ -25,7 +37,7 @@ export default function Layout({children}) {
             </Head>
 
             <MainNav />
-            <MainFooter />
+            {showFooter && <MainFooter />}
             <HomeBackgound img={content[currentSlide].img}/>
             <Bubble color="255, 255, 255"/>
             {children}

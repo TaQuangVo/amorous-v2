@@ -30,7 +30,6 @@ a {
   padding: 0;
 }
 :root {
-  --vh: 100vh;
   --font-family-one: "Dancing Script", cursive;
   --font-family-two: "Poppins", sans-serif;
 
@@ -52,6 +51,9 @@ a {
   --boxPreview-scale: 1;
   --boxPreview-font: "Dancing Script", cursive;
   --boxPreview-fontSize: 13px;
+
+  /*background offset*/
+    --transformY:0px;
 }
 
 /*bambuger icon nav */

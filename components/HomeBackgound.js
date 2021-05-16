@@ -42,16 +42,11 @@ export default function HomeBackgound({img}) {
     }, [])
 
     return (
-        <motion.div
-        initial={{opacity:0.9}}
-        animate={{opacity:1}}
-        exit={{opacity:0.9}}
-        className={styleHomeBackground.backgroundImage}
-        id="pageBackground">
+        <div className={styleHomeBackground.backgroundImage} id="pageBackground">
             <div id="imgWrapBackground" className={styleHomeBackground.backgroundImage__wraper}>
                 <Image src={img} layout="fill" objectFit="cover" quality={20} ></Image>
                 <div className={styleHomeBackground.backgroundImage__overlay}></div>
             </div>
-        </motion.div>
+        </div>
     )
 }

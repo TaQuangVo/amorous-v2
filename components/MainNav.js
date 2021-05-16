@@ -40,7 +40,7 @@ export default function MainNav() {
             const Yoffset = window.pageYOffset;
 
             if(Yoffset > 50){
-              nav.style.backgroundColor="white";
+              nav.style.backgroundColor="rgba(255, 255, 255, 0.9)";
               setNavWhite(true);
             }
             if(Yoffset < 50){
