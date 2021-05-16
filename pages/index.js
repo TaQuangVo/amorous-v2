@@ -113,7 +113,7 @@ export default function Home() {
             </div>
 
             <div className={stylesHome.createYO}>
-              <p>create</p>
+              <p>continue working on this later</p>
             </div>
             
           </div>
