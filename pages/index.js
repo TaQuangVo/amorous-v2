@@ -39,7 +39,7 @@ export default function Home() {
       const paralax = Yoffset * 0.5;
 
       homeSlider.style.transform = `translateY(${paralax}px)`;
-      console.log("translate");
+      
       //background.style.transform = `translateY(${paralax}px)`;
 
     }
