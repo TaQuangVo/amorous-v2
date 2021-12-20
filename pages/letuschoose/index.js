@@ -22,7 +22,7 @@ export default function DesignYourOwn() {
                type:LetUsChoose,
            }
         });
-        router.push("/designyourown/choosegender");
+        router.push("/letuschoose/choosegender");
     }
 
     const [content, setContent] = useState({
