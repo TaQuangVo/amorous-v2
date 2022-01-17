@@ -1,0 +1,51 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-row-gap: 50px;
+  max-width: 100%;
+  overflow-x: scroll;
+}
+.container {
+  overflow-y: scroll;
+  /* this will hide the scrollbar in mozilla based browsers */
+  overflow: -moz-scrollbars-none;
+  /* this will hide the scrollbar in internet explorers */
+  -ms-overflow-style: none;
+}
+/* this will hide the scrollbar in webkit based browsers - safari, chrome, etc */
+.container::-webkit-scrollbar {
+  width: 0 !important;
+  display: none;
+}
+.ingredient {
+  width: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.6rem;
+}
+.imageWraper {
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  opacity: 0.7;
+}
+.ingredient p {
+  font-family: var(--font-family-two);
+  font-weight: 500;
+  font-size: 1rem;
+  width: 6rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  padding-top: 1rem;
+}
+.noIngredients {
+  font-family: var(--font-family-two);
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+}

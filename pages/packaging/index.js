@@ -1,33 +1,24 @@
 import styleCreateYO from "../../styles/CreateYourOwn.module.css"
-import {useState, useContext} from "react"
+import {useState} from "react"
 import { useRouter } from 'next/router'
 
 //components
 import PageContainer from "../../components/PageContainer"
 
-//context
-import {oderDispatchContext} from "../../context/OderContext";
-
 
 export default function DesignYourOwn() {
-
-    const oderDispatch  = useContext(oderDispatchContext);
-
     const router = useRouter()
 
     const nextSteps = () => {
-        oderDispatch({
-            type:"SETODERTYPE",
-            payload: "Create Your Own",
-        })
-        router.push("/designyourown/choosegender");
+
+        router.push("/packaging/chooseBottle");
     }
 
     const [content, setContent] = useState({
-        header:"Create Your Own",
-        discription:"Your will go throw a serie of steps to create your fragrance",
+        header:"Design Your packaging",
+        discription:"Your will go throw a serie of steps to design the appearence of your parfume",
         discription2:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-        button:"Start creating"
+        button:"Start Designing"
     })
 
     return (

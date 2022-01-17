@@ -5,22 +5,12 @@ import {useEffect, useContext} from "react"
 import BottleDesign from "../../components/BottleDesign"
 import PageContainer from "../../components/PageContainer"
 
-//context
-import {oderContext} from "../../context/OderContext";
-
-
 
 export default function bottleDesign() {
 
-    const {oder} = useContext(oderContext);
-
-    useEffect(() => {
-        console.log(oder);
-    }, [])
-
     return (          
            <PageContainer>
-               <BottleDesign redirectLink="/designyourown/boxDesign"/>
+               <BottleDesign redirectLink="/packaging/boxDesign"/>
            </PageContainer>
     )
 }

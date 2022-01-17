@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import ChooseGenderContent from "../ChooseGenderContent";
 
 //context
-import {oderContext} from "../../context/OderContext";
+import {oderDispatchContext} from "../../context/OderContext";
 
 //
 //swiper
@@ -21,7 +21,8 @@ SwiperCore.use([Navigation, Pagination,EffectCoverflow ]);
 export default function ChooseGender({redirectLink}) {
 
 
-    const {setOder, Male, Female} = useContext(oderContext);
+    const oderDispatch = useContext(oderDispatchContext);
+
     let swiper;
     const [currentSlide, setCurrentSlide] = useState(0)
     const router = useRouter();
@@ -60,11 +61,9 @@ export default function ChooseGender({redirectLink}) {
     }, [])
 
     const handleOnClick = () => {
-        setOder(prev => {
-            return {
-                ...prev,
-                gender: currentSlide === 0 ? Male : Female,
-            }
+        oderDispatch({
+            type:"SETGENDER_CYO",
+            payload: currentSlide === 0 ? "Male" : "Female",
         })
         router.push(redirectLink);
     }

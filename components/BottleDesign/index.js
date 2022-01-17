@@ -3,68 +3,51 @@ import style from "./style.module.css"
 import { useRouter } from 'next/router'
 
 //data
-import {fontSize} from "../../src/fontSize"
 import {fontFamily} from "../../src/fontFamily"
 
 //context
-import {oderContext} from "../../context/OderContext";
+import {oderDispatchContext} from "../../context/OderContext";
+import {oderStateContext} from "../../context/OderContext";
 
 //conponents
-
 import BottlePreview from "../BottlePreview"
 import Dropdown from "../Dropdown";
 
 export default function BottleDesign({redirectLink}) {
 
-    const {oder,setBottleDesign,bottleDesign} = useContext(oderContext);
+    const oderDispatch  = useContext(oderDispatchContext);
+    const oderState  = useContext(oderStateContext);
+
     const fonts = fontFamily;
     const router = useRouter();
 
     const [firstText, setFirstText] = useState({
         text:"",
-        fontfamily:fontFamily[0],
-        fontSize:fontSize[5],
+        font:fonts[0],
+        fontSize:fonts[0].fontSize[1],
     })
     const [secondText, setSecondText] = useState({
         text:"",
-        fontfamily:fontFamily[0],
-        fontSize:fontSize[5],
+        font:fonts[0],
+        fontSize:fonts[0].fontSize[1],
     })
     const [thirdText, setThirdText] = useState({
         text:"",
-        fontfamily:fontFamily[0],
-        fontSize:fontSize[5],
+        font:fonts[0],
+        fontSize:fonts[0].fontSize[1],
     })
-
-    useEffect(() => {
-        let root = document.documentElement
-        root.style.setProperty("--font-size-two", `${secondText.fontSize.text}px`);
-        root.style.setProperty("--font-fam-two", `${secondText.fontfamily.fontFamily}`);
-    }, [secondText.fontSize, secondText.fontfamily])
-    useEffect(() => {
-        let root = document.documentElement
-        root.style.setProperty("--font-size-one", `${firstText.fontSize.text}px`);
-        root.style.setProperty("--font-fam-one", `${firstText.fontfamily.fontFamily}`);
-    }, [firstText.fontSize, firstText.fontfamily])
-    useEffect(() => {
-        let root = document.documentElement
-        root.style.setProperty("--font-size-three", `${thirdText.fontSize.text}px`);
-        root.style.setProperty("--font-fam-three", `${thirdText.fontfamily.fontFamily}`);
-    }, [thirdText.fontSize, thirdText.fontfamily])
-
-    useEffect(() => {
-        console.log(oder,bottleDesign)
-    }, [])
 
 
     const handleBottleDesign = () => {
-        setBottleDesign(prev =>{
-            return {
-                ...prev,
+        oderDispatch({
+            type:"SETBOTTLEDISIGN",
+            payload:{
                 firstText:firstText,
                 secondText:secondText,
+                thirdText:thirdText,
             }
-        });
+        })
+
         router.push(redirectLink);
     }
 
@@ -77,8 +60,6 @@ export default function BottleDesign({redirectLink}) {
         yourText : "Your Text",
         continue : "Continue"
     }
-
-
 
     return (
         <div  className={style.container}>
@@ -93,89 +74,83 @@ export default function BottleDesign({redirectLink}) {
                             <label htmlFor="topInput">{pageContents.topText}</label>
                             <div className={style.Dropdown} style={{zIndex:3}}>
                                 <div className={style.fontfamily}>
-                                    <Dropdown inputs={fonts} init={firstText.fontfamily} 
+                                    <Dropdown inputs={fonts} init={firstText.font} 
                                     onChange={(index)=>{
                                         setFirstText(prev => {
-                                            return {...prev,fontfamily:fonts[index] }
+                                            return {...prev,font:fonts[index] }
                                         })}
                                     }/>
                                 </div>
                                 <div>
-                                    <Dropdown inputs={fontSize} init={firstText.fontSize} 
+                                    <Dropdown inputs={firstText.font.fontSize} init={firstText.fontSize} 
                                     onChange={(index)=>{
                                         setFirstText(prev => {
-                                            return {...prev,fontSize:fontSize[index] }
+                                            return {...prev,fontSize:firstText.font.fontSize[index] }
                                         })}
                                     }/>
                                 </div>
                             </div>
-                            <input autoComplete="off" placeholder={pageContents.yourText} onChange={e => {setFirstText(prev => {return {...prev,text: e.target.value}})}}/>
+                            <input autoComplete="off" placeholder={pageContents.yourText} 
+                                onChange={e => {setFirstText(prev => {return {...prev,text: e.target.value}})}}
+                            />
+
+                            
                             <label htmlFor="topInput">{pageContents.midleText}</label>
                             <div className={style.Dropdown} style={{zIndex:2}}>
                                 <div className={style.fontfamily}>
-                                    <Dropdown inputs={fonts} init={secondText.fontfamily} 
+                                    <Dropdown inputs={fonts} init={secondText.font} 
                                     onChange={(index)=>{
                                         setSecondText(prev => {
-                                            return {...prev,fontfamily:fonts[index] }
+                                            return {...prev,font:fonts[index] }
                                         })}
                                     }/>
                                 </div>
                                 <div>
-                                    <Dropdown inputs={fontSize} init={secondText.fontSize} 
+                                    <Dropdown inputs={secondText.font.fontSize} init={secondText.fontSize} 
                                     onChange={(index)=>{
                                         setSecondText(prev => {
-                                            return {...prev,fontSize:fontSize[index] }
+                                            return {...prev,fontSize:secondText.font.fontSize[index] }
                                         })}
                                     }/>
                                 </div>
                             </div>
-                            <input autoComplete="off" placeholder={pageContents.yourText} onChange={e => {setSecondText(prev => {return {...prev,text: e.target.value}})}}/>
+                            <input autoComplete="off" placeholder={pageContents.yourText} 
+                                onChange={e => {setSecondText(prev => {return {...prev,text: e.target.value}})}}
+                            />
+
+
                             <label htmlFor="bottomInput">{pageContents.bottomText}</label>
                             <div className={style.Dropdown} style={{zIndex:1}}>
                                 <div className={style.fontfamily}>
-                                    <Dropdown inputs={fonts} init={thirdText.fontfamily} 
+                                    <Dropdown inputs={fonts} init={thirdText.font} 
                                     onChange={(index)=>{
                                         setThirdText(prev => {
-                                            return {...prev,fontfamily:fonts[index] }
+                                            return {...prev,font:fonts[index] }
                                         })}
                                     }/>
                                 </div>
                                 <div>
-                                    <Dropdown inputs={fontSize} init={thirdText.fontSize} 
+                                    <Dropdown inputs={thirdText.font.fontSize} init={thirdText.fontSize} 
                                     onChange={(index)=>{
                                         setThirdText(prev => {
-                                            return {...prev,fontSize:fontSize[index] }
+                                            return {...prev,fontSize:thirdText.font.fontSize[index]}
                                         })}
                                     }/>
                                 </div>
                             </div>
                             <input autoComplete="off" id="bottomInput" placeholder={pageContents.yourText} onChange={e => {setThirdText(prev => {return {...prev,text: e.target.value}})}}/>
+
+
                             <button id="firstBtn" className={style.button} type="button" onClick={handleBottleDesign}>{pageContents.continue}</button>
                         </form>
                     </div>
                     <div className={style.prevewSide}>
                         <div className={style.previewWraper}>
                             <BottlePreview 
-                            bottle={bottleDesign.bottle === null ? {
-                                id:1,
-                                url:"/bottles/signac_1new.png",
-                                name:"BottleOne",
-                                topText:{
-                                    y:35,
-                                    xOffset:0,
-                                    rotate:0,
-                                    maxWidth: 30,
-                                },
-                                bottomText:{
-                                    y:83,
-                                    xOffset:0,
-                                    rotate:0,
-                                    maxWidth: 30,
-                                }
-                            } : bottleDesign.bottle}
-                            firstText={firstText.text}
-                            secondText={secondText.text}
-                            thirdText={thirdText.text}
+                            bottle={oderState.bottle.bottle}
+                            firstText={firstText}
+                            secondText={secondText}
+                            thirdText={thirdText}
                             />
                         </div>
                     </div>

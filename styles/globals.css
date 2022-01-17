@@ -33,15 +33,8 @@ a {
   --font-family-one: "Dancing Script", cursive;
   --font-family-two: "Poppins", sans-serif;
 
-  /*preview var*/
-  --width: 500px;
+  /*bottle preview scale*/
   --scale: 1;
-  --font-size-one: 19px;
-  --font-size-two: 19px;
-  --font-size-three: 19px;
-  --font-fam-one: var(--font-family-one);
-  --font-fam-two: var(--font-family-one);
-  --font-fam-three: var(--font-family-one);
 
   /*box design*/
   --boxDim-x: 300px;
@@ -49,11 +42,11 @@ a {
   --boxDim-z: 150px;
 
   --boxPreview-scale: 1;
-  --boxPreview-font: "Dancing Script", cursive;
-  --boxPreview-fontSize: 13px;
 
   /*background offset*/
-    --transformY:0px;
+  --transformY: 0px;
+
+  --vh: 100vh;
 }
 
 /*bambuger icon nav */

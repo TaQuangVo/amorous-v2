@@ -7,35 +7,35 @@ import {oderContext} from "../../context/OderContext";
 import PageContainer from "../../components/PageContainer"
 import SlideSelect from "../../components/SlideSelect"
 
-import {occasion} from "../../src/occasion"
+import {charactors} from "../../src/charactors-letuschose"
 
 
 
-export default function chooseOccasion() {
+export default function chooseCharactor() {
     
     const router = useRouter()
     const {oder, setOder} = useContext(oderContext);
 
     const content = {
         header:"Let Us Choose For You",
-        discription:"Choose a occasion",
+        discription:"Choose a charactor",
     }
 
     const handleOnClick = (currentSlide) => {
         setOder(prev => {
             return {
                 ...prev,
-                charactor:occasion[currentSlide].header,
+                charactor:charactors[currentSlide].header,
             }
          });
-    
+         
          console.log(currentSlide)
-         router.push("/letuschoose/choosecharactor");
+         router.push("/letuschoose/chooseimpression");
     }
 
     return (          
            <PageContainer>
-               <SlideSelect  data={occasion} handleOnClick={handleOnClick} content={content}/>
+               <SlideSelect  data={charactors} handleOnClick={handleOnClick} content={content}/>
            </PageContainer>
     )
 }

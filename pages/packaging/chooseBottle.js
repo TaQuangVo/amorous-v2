@@ -1,7 +1,7 @@
 
 
 //conponents
-import BoxDesign from "../../components/BoxDesign";
+import ChooseBottle from "../../components/ChooseBottle"
 import PageContainer from "../../components/PageContainer"
 
 
@@ -10,7 +10,8 @@ export default function choosebottle() {
 
     return (          
            <PageContainer>
-               <BoxDesign redirectLink="/designyourown/bottledesign"/>
+               <ChooseBottle redirectLink="/packaging/bottledesign"/>
            </PageContainer>
     )
 }
+

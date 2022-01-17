@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import {bottleShapes} from "../../src/bottleShapes"
 
 //context
-import {oderContext} from "../../context/OderContext";
+import {oderDispatchContext} from "../../context/OderContext";
 
 //swiper
 import "swiper/swiper-bundle.css"
@@ -21,7 +21,8 @@ SwiperCore.use([Navigation, Pagination,EffectCoverflow,Mousewheel ]);
 export default function ChooseBottle({redirectLink}) {
 
 
-    const {oder, setBottleDesign} = useContext(oderContext);
+    const oderDispatch = useContext(oderDispatchContext);
+
     let swiper;
     const [currentSlide, setCurrentSlide] = useState(0)
     const router = useRouter();
@@ -59,17 +60,15 @@ export default function ChooseBottle({redirectLink}) {
         swiper.slideTo(currentSlide);
         swiper.on('slideChange', (e) => {
             setCurrentSlide(e.activeIndex)
-          });
-        console.log(oder);
+        });
     }, [])
 
     const handleOnClick = () => {
-        setBottleDesign(prev => {
-            return {
-                ...prev,
-                bottle: bottles[currentSlide],
-            }
+        oderDispatch({
+            type:"SETBOTTLE",
+            payload:bottles[currentSlide]
         })
+
         router.push(redirectLink);
     }
 

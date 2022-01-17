@@ -1,5 +1,6 @@
 .container {
-  height: var(--vh);
+  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   padding: 7rem 0 6rem 0;
   position: relative;

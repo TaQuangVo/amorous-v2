@@ -3,8 +3,7 @@ import {useContext}  from "react";
 import { useRouter } from 'next/router'
 
 //context
-import {oderDispatchContext} from "../../context/OderContext";
-import {oderStateContext} from "../../context/OderContext";
+import {oderContext} from "../../context/OderContext";
 
 import PageContainer from "../../components/PageContainer"
 import SlideSelect from "../../components/SlideSelect"
@@ -15,13 +14,14 @@ import {femaleImpression,maleImpression} from "../../src/impressions"
 export default function DesignYourOwn() {
     
     const router = useRouter()
-    const oderDispatch = useContext(oderDispatchContext);
-    const oderState = useContext(oderStateContext);
+    const {oder, setOder, Male, Female} = useContext(oderContext);
 
     let impressions
 
-    if(oderState.CYO.gender == "Male"){
+    if(oder.gender === Male){
         impressions = maleImpression
+    }else if(oder.gender === Female){
+        impressions = femaleImpression
     }else{
         impressions = femaleImpression
     }
@@ -32,12 +32,13 @@ export default function DesignYourOwn() {
     }
 
     const handleOnClick = (currentSlide) => {
-        oderDispatch({
-            type: "SETIMPRESSION_CYO",
-            payload: impressions[currentSlide].header,
-        })
-        
-        router.push("/designyourown/chooseingredients");
+        setOder(prev => {
+            return {
+                ...prev,
+                charactor:impressions[currentSlide].header,
+            }
+         });
+         router.push("/packaging");
     }
 
     return (          

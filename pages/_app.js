@@ -1,6 +1,9 @@
 import '../styles/globals.css'
 import {useEffect} from "react"
-import {AnimatePresence} from "framer-motion"
+import { getAnalytics } from "firebase/analytics";
+import { app } from '../util/firebase';
+
+//import {AnimatePresence} from "framer-motion"
 
 //components
 import Layout from "../components/Layout"
@@ -13,15 +16,10 @@ import OderContextProvider from "../context/OderContext";
 
 function MyApp({ Component, pageProps ,router }) {
 
-  useEffect(() => {
-    const handleResize = () => {
-      document.documentElement.style.setProperty('--vh', window.innerHeight + "px");
-    }
-    handleResize();
-    window.addEventListener("resize", handleResize)
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
+  useEffect(async() => {
+
+      getAnalytics(app)
+
   }, []);
 
   return (
@@ -30,7 +28,7 @@ function MyApp({ Component, pageProps ,router }) {
     <HomepageContextProvider>
     <Layout>
       {/*<AnimatePresence exitBeforeEnter initial={false}>*/}
-      <Component {...pageProps } key={router.route}/> 
+      <Component {...pageProps } key={router.route}/>
       {/*</AnimatePresence>*/}
     </Layout>
     </HomepageContextProvider>

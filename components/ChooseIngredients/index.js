@@ -9,22 +9,21 @@ import IngredientsChosen from "../IngredientsChosen";
 import {data} from "../../src/ingrediensData.js";
 
 //context
-import {oderContext} from "../../context/OderContext";
+import {oderDispatchContext} from "../../context/OderContext";
 
 export default function ChooseIngredients({redirectLink}) {
 
     const [ingredients, setSngredients] = useState(data);
     const [chosen, setChosen] = useState([]);
-    const {oder, setOder} = useContext(oderContext);
+    const oderDispatch = useContext(oderDispatchContext);
     const router = useRouter();
 
     const addIngredients = () => {
-        setOder((prev) => {
-            return {
-                ...prev,
-                ingredients:chosen,
-            }
-        });
+        oderDispatch({
+            type:"SETINGREDIENTS_CYO",
+            payload: chosen
+        })
+
         router.push(redirectLink);
     }
 

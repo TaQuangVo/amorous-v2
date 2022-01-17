@@ -30,7 +30,7 @@ export default function Layout({children}) {
     },[router]);
 
     return (
-        <div>
+        <div style={{height: "100vh", position:"relative"}}>
             <Head>
                 <title>Amorous</title>
                 <link rel="icon" href="/favicon.ico" />

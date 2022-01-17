@@ -35,18 +35,13 @@
 }
 .textOne {
   text-align: center;
-  font-family: var(--font-fam-one);
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: calc(var(--font-size-one) * var(--scale));
 }
 .textTwo {
   text-align: center;
-  font-family: var(--preview-font-family);
-  font-size: calc(var(--font-size-two) * var(--scale));
-  font-family: var(--font-fam-two);
   max-width: 100%;
   overflow: hidden;
   white-space: nowrap;
@@ -55,11 +50,14 @@
 .textThree {
   text-align: center;
   position: absolute;
-  font-family: var(--preview-font-family);
-  font-size: calc(var(--font-size-three) * var(--scale));
-  font-family: var(--font-fam-three);
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.noBottle {
+  font-family: var(--font-family-two);
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
 }
 @media (height: 900px) {
 }
