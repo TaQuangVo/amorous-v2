@@ -49,6 +49,16 @@ a {
   --vh: 100vh;
 }
 
+/* disable autocomplete style */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s !important;
+
+  -webkit-text-fill-color: rgb(29, 29, 29) !important;
+}
+
 /*bambuger icon nav */
 .hamburger--active div::after {
   transform: rotate(45deg) !important;
@@ -118,14 +128,14 @@ a {
   }
 }
 @media (max-width: 450px) {
-  html {
-    font-size: 10px;
-  }
   :root {
     --boxPreview-scale: 0.5;
   }
 }
 @media (max-width: 350px) {
+  html {
+    font-size: 10px;
+  }
 }
 
 .showPopUp {

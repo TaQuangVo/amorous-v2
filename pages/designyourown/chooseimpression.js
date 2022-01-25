@@ -34,7 +34,7 @@ export default function DesignYourOwn() {
     const handleOnClick = (currentSlide) => {
         oderDispatch({
             type: "SETIMPRESSION_CYO",
-            payload: impressions[currentSlide].header,
+            payload: impressions[currentSlide],
         })
         
         router.push("/designyourown/chooseingredients");

@@ -1,7 +1,10 @@
 import '../styles/globals.css'
-import {useEffect} from "react"
+import {useEffect, useMemo} from "react"
 import { getAnalytics } from "firebase/analytics";
 import { app } from '../util/firebase';
+
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
 
 //import {AnimatePresence} from "framer-motion"
 
@@ -12,17 +15,25 @@ import Layout from "../components/Layout"
 import HomepageContextProvider from "../context/HomepageContext";
 import LanguageContextProvider from "../context/LanguageContext";
 import OderContextProvider from "../context/OderContext";
+import AuthContextProvider from "../context/AuthContext";
 
 
 function MyApp({ Component, pageProps ,router }) {
 
+  const stripePk = "pk_test_lcbWDSG0RW52kYBPbqG5SVYT00iZ4NBwwE"
+
+  const stripePromise = useMemo(
+    () => loadStripe(stripePk),
+    [],
+  )
+
   useEffect(async() => {
-
       getAnalytics(app)
-
   }, []);
 
   return (
+    <AuthContextProvider>
+    <Elements stripe={stripePromise}>
     <OderContextProvider>
     <LanguageContextProvider>
     <HomepageContextProvider>
@@ -34,6 +45,8 @@ function MyApp({ Component, pageProps ,router }) {
     </HomepageContextProvider>
     </LanguageContextProvider>
     </OderContextProvider>
+    </Elements>
+    </AuthContextProvider>
   )
 }
 

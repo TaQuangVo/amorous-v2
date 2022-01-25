@@ -1,0 +1,47 @@
+/*account*/
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 17rem;
+}
+.form label {
+  font-family: var(--font-family-two);
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+.form .inputfield {
+  font-family: var(--font-family-two);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.4rem 0.5rem;
+  outline: none;
+  border: solid 1px black;
+  border-radius: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.719);
+}
+.inputSubmit {
+  width: 70%;
+  margin-top: 1.5rem;
+  font-family: var(--font-family-two);
+  font-weight: 500;
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.5rem 0;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.form p {
+  font-family: var(--font-family-two);
+  font-weight: 500;
+  font-size: 1rem;
+  color: rgb(51, 51, 51);
+  margin-top: 1rem;
+}
+.form p span {
+  cursor: pointer;
+  color: black;
+}

@@ -1,6 +1,6 @@
 import style from "./style.module.css";
 import Image from "next/image"
-import {useEffect, useRef} from "react"
+import {useEffect} from "react"
 import {motion} from "framer-motion";
 
 

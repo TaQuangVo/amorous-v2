@@ -18,6 +18,7 @@ export default function Layout({children}) {
 
     const {content,currentSlide} = useContext(homeContext)
     const [showFooter, setShowFooter] = useState(true);
+    const [showBackground, setShowBackground] = useState(true);
     const router = useRouter();
 
     useEffect(()=>{
@@ -27,6 +28,7 @@ export default function Layout({children}) {
         }else{
             setShowFooter(true);
         }
+
     },[router]);
 
     return (
@@ -38,7 +40,7 @@ export default function Layout({children}) {
 
             <MainNav />
             {showFooter && <MainFooter />}
-            <HomeBackgound img={content[currentSlide].img}/>
+            {showBackground && <HomeBackgound img={content[currentSlide].img}/>}
             <Bubble color="255, 255, 255"/>
             {children}
         </div>

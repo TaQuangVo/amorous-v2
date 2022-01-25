@@ -1,4 +1,5 @@
 import style from "./style.module.css"
+import Link from "next/link"
 
 import IngredientsPreview from "../IngredientsOderPreview"
 import BottlePreview from "../BottlePreview"
@@ -22,10 +23,10 @@ export default function index({oder}) {
             <p>{CYO.gender == null ? "Not selected" : CYO.gender}</p>
 
             <h2>Charactor</h2>
-            <p>{CYO.charactor == null ? "Not selected" : CYO.charactor}</p>
+            <p>{CYO.charactor == null ? "Not selected" : CYO.charactor.header}</p>
 
             <h2>Impression</h2>
-            <p>{CYO.impression == null ? "Not selected" : CYO.impression}</p>
+            <p>{CYO.impression == null ? "Not selected" : CYO.impression.header}</p>
 
             <h2>Ingredients</h2>
             <IngredientsPreview ingredients = {CYO.ingredients}/>
@@ -60,7 +61,7 @@ export default function index({oder}) {
             <h2>Tottal cost</h2>
             <p>150 $</p>
 
-            <button>Proceed payment</button>
+            <Link href="/checkout/payment"><button>Proceed payment</button></Link>
 
 
         </div>

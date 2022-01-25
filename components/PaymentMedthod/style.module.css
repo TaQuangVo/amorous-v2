@@ -1,0 +1,77 @@
+.container {
+  padding-top: 1rem;
+}
+.total h2 {
+  font-family: var(--font-family-two);
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.total p {
+  font-family: var(--font-family-two);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.stripeForm {
+  width: 100%;
+  max-width: 350px;
+}
+.stripeForm label {
+  font-family: var(--font-family-two);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.cardWraper {
+  padding: 0.9rem 0.2rem;
+  border: solid 1px black;
+  border-radius: 0.3rem;
+  max-height: 42px;
+}
+.cardName {
+  background-color: transparent;
+  padding: 0.9rem 0.5rem;
+  border: solid 1px black;
+  color: rgb(40, 40, 40, 1);
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+  margin: 0.8rem 0;
+  font-size: 13px;
+}
+.cardName::placeholder {
+  color: rgb(54, 54, 54);
+  font-size: 13px;
+}
+.stripeForm button {
+  width: 15rem;
+  margin-top: 1.5rem;
+  font-family: var(--font-family-two);
+  font-weight: 500;
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.7rem 0;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin: 1.5rem auto 0 auto;
+}
+
+/*divider*/
+.divider {
+  display: flex;
+  align-items: center;
+  max-width: 350px;
+}
+.divider span {
+  height: 1px;
+  flex-grow: 1;
+  background-color: black;
+}
+.divider h4 {
+  font-family: var(--font-family-two);
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin: 1rem 0.3rem;
+}

@@ -125,6 +125,13 @@
 .signInBtn:hover {
   transform: scale(1.2);
 }
+.signout {
+  margin-top: 2rem;
+  color: white;
+  font-family: var(--font-family-two);
+  font-size: 1.2rem;
+  transition: all 300ms ease;
+}
 
 /*media query */
 @media (max-width: 600px) {

@@ -26,7 +26,7 @@ export default function DesignYourOwn() {
     const handleOnClick = (currentSlide) => {
         oderDispatch({
             type: "SETCHARACTOR_CYO",
-            payload: charactors[currentSlide].header
+            payload: charactors[currentSlide]
         })
         router.push("/designyourown/chooseimpression");
     }
